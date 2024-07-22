@@ -1,16 +1,20 @@
 import re
 
-def mood_response(text):
+def mood_response():
     text = input("How are you feeling today?: ")
-    happy = r"(good|happy|well|fine)"
+    happy = r"good|happy|well|fine"
     sad = r"(sad|bad|mad)"
     neutral = r"(fine|ok|comme ci comme ca)"
-    re.search(happy, sad, neutral, text)
-    if happy in text:
+    var = re.search(happy, text)
+    var2 = re.search(sad, text)
+    var3 = re.search(neutral, text)
+    if var:
         print("u rock keep it up")
-    elif sad in text:
+    elif var2:
         print("don worryy it gets better")
-    elif neutral in text:
+    elif var3:
         print("get off the fence already")
+    else:
+        print("your mood is not valid")
 
 mood_response()
